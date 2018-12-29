@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>forms</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  </head>
+  <body>
+
+ <div class="container">
+     <h1>fill out the form!</h1>
+   <div class="jumbotron">
+     <!-- <input id="id_botcatcher" name="botcatcher" type="hidden" value="sneaky"> -->
+     <!--(Hidden field botcatcher) Ensure this value has at most 0 characters (it has 7). -->
+     <!-- <input id="id_botcatcher" name="botcatcher" type="hidden" value="fooled!"> -->
+
+     <form class=""   method="POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class="btn btn success" name="" value="submit">
+     </form>
+   </div>
+
+ </div>
+  </body>
+</html>
