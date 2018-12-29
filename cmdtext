@@ -1,0 +1,33 @@
+
+(base) C:\Users\Admin>activate MydjangoEnv2
+
+(MydjangoEnv2) C:\Users\Admin>mkdir django_lectures
+
+(MydjangoEnv2) C:\Users\Admin>cd django_lectures
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures>django-admin startproject first_pr
+oject
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures>cd first_project
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python manage.py sta
+rtapp first_app
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python manage.py run
+server
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you
+ apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+December 11, 2018 - 12:31:30
+Django version 1.10.5, using settings 'first_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Not Found: /index/
+[11/Dec/2018 12:31:35] "GET /index/ HTTP/1.1" 404 2155
+Not Found: /favicon.ico
+[11/Dec/2018 12:31:36] "GET /favicon.ico HTTP/1.1" 404 2170
+[11/Dec/2018 12:31:38] "GET / HTTP/1.1" 200 215

@@ -1,0 +1,155 @@
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>pip install Faker
+Collecting Faker
+  Downloading https://files.pythonhosted.org/packages/8e/fb/29b3dd4b0332db634ed3
+8ceefdb4f93797837cbe67f57c2c04cc1e3d9b55/Faker-1.0.0-py2.py3-none-any.whl (845kB
+)
+    100% |################################| 849kB 1.6MB/s
+Collecting six>=1.10 (from Faker)
+  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe8
+98238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
+Collecting python-dateutil>=2.4 (from Faker)
+  Downloading https://files.pythonhosted.org/packages/74/68/d87d9b36af36f44254a8
+d512cbfc48369103a3b9e474be9bdfe536abfc45/python_dateutil-2.7.5-py2.py3-none-any.
+whl (225kB)
+    100% |################################| 235kB 6.8MB/s
+Collecting text-unidecode==1.2 (from Faker)
+  Downloading https://files.pythonhosted.org/packages/79/42/d717cc2b4520fb09e45b
+344b1b0b4e81aa672001dd128c180fabc655c341/text_unidecode-1.2-py2.py3-none-any.whl
+ (77kB)
+    100% |################################| 81kB 4.9MB/s
+Installing collected packages: six, python-dateutil, text-unidecode, Faker
+Successfully installed Faker-1.0.0 python-dateutil-2.7.5 six-1.12.0 text-unideco
+de-1.2
+You are using pip version 10.0.1, however version 18.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm
+and.
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python populate_firs
+t_app.py
+populating script
+Traceback (most recent call last):
+  File "populate_first_app.py", line 37, in <module>
+    populate(20)
+  File "populate_first_app.py", line 31, in populate
+    webpg = Webpage.objects.get_or_create(topic=top,url=fake_rul,name=fake_name)
+[0]
+NameError: name 'fake_rul' is not defined
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python populate_firs
+t_app.py
+populating script
+populating complete!
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python manage.py run
+server
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 11, 2018 - 14:47:51
+Django version 1.10.5, using settings 'first_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[11/Dec/2018 14:47:58] "GET /admin/first_app/ HTTP/1.1" 200 3091
+[11/Dec/2018 14:48:14] "GET /admin/first_app/webpage/ HTTP/1.1" 200 3062
+[11/Dec/2018 14:48:14] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 14:48:22] "GET /admin/first_app/ HTTP/1.1" 200 3091
+[11/Dec/2018 14:48:24] "GET /admin/first_app/topic/ HTTP/1.1" 200 4644
+[11/Dec/2018 14:48:24] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 14:48:29] "GET / HTTP/1.1" 200 215
+[11/Dec/2018 14:48:36] "GET /admin/ HTTP/1.1" 200 4906
+[11/Dec/2018 14:48:38] "GET /admin/first_app/webpage/ HTTP/1.1" 200 3062
+[11/Dec/2018 14:48:38] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python manage.py run
+server
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 11, 2018 - 14:49:35
+Django version 1.10.5, using settings 'first_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[11/Dec/2018 14:49:38] "GET /admin/first_app/webpage/ HTTP/1.1" 200 3062
+[11/Dec/2018 14:49:38] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 14:49:42] "GET /admin/first_app/ HTTP/1.1" 200 3091
+[11/Dec/2018 14:49:45] "GET /admin/first_app/webpage/ HTTP/1.1" 200 3062
+[11/Dec/2018 14:49:45] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 14:49:47] "GET /admin/first_app/ HTTP/1.1" 200 3091
+[11/Dec/2018 14:49:49] "GET /admin/first_app/accessrecord/ HTTP/1.1" 200 3102
+[11/Dec/2018 14:49:49] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 14:49:50] "GET /admin/first_app/ HTTP/1.1" 200 3091
+[11/Dec/2018 14:49:51] "GET /admin/first_app/topic/ HTTP/1.1" 200 4644
+[11/Dec/2018 14:49:52] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 14:49:54] "GET /admin/first_app/topic/1/change/ HTTP/1.1" 200 4099
+[11/Dec/2018 14:49:55] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 14:49:57] "GET /admin/first_app/topic/ HTTP/1.1" 200 4644
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python populate_firs
+t_app.py
+populating script
+Traceback (most recent call last):
+  File "populate_first_app.py", line 37, in <module>
+    populate(20)
+  File "populate_first_app.py", line 31, in populate
+    webpg = Webpage.objects.get_or_create(topic=top,url=fake_rul,name=fake_name)
+[0]
+NameError: name 'fake_rul' is not defined
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python populate_firs
+t_app.py
+populating script
+Traceback (most recent call last):
+  File "populate_first_app.py", line 37, in <module>
+    print(populate(20))
+  File "populate_first_app.py", line 31, in populate
+    webpg = Webpage.objects.get_or_create(topic=top,url=fake_rul,name=fake_name)
+[0]
+NameError: name 'fake_rul' is not defined
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python populate_firs
+t_app.py
+populating script
+None
+populating complete!
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python manage.py run
+server
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 11, 2018 - 14:53:49
+Django version 1.10.5, using settings 'first_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[11/Dec/2018 14:53:53] "GET /admin/first_app/topic/ HTTP/1.1" 200 5533
+[11/Dec/2018 14:53:53] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 14:54:02] "GET /admin/first_app/ HTTP/1.1" 200 3091
+[11/Dec/2018 14:54:03] "GET /admin/first_app/webpage/ HTTP/1.1" 200 8707
+[11/Dec/2018 14:54:03] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 14:54:05] "GET /admin/first_app/webpage/5/change/ HTTP/1.1" 200 614
+3
+[11/Dec/2018 14:54:05] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 14:54:09] "GET /admin/first_app/ HTTP/1.1" 200 3091
+
+(MydjangoEnv2) C:\Users\Admin\django_lectures\first_project>python manage.py run
+server
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 11, 2018 - 15:00:10
+Django version 1.10.5, using settings 'first_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[11/Dec/2018 15:00:12] "GET / HTTP/1.1" 200 215
+[11/Dec/2018 15:00:20] "GET /admin/ HTTP/1.1" 200 4906
+[11/Dec/2018 15:00:24] "GET /admin/logout/ HTTP/1.1" 200 1014
+[11/Dec/2018 15:00:25] "GET /admin/ HTTP/1.1" 302 0
+[11/Dec/2018 15:00:26] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1657
+[11/Dec/2018 15:00:33] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[11/Dec/2018 15:00:33] "GET /admin/ HTTP/1.1" 200 4906
+[11/Dec/2018 15:00:41] "GET /admin/first_app/webpage/ HTTP/1.1" 200 8707
+[11/Dec/2018 15:00:41] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[11/Dec/2018 15:00:43] "GET /admin/first_app/webpage/20/change/ HTTP/1.1" 200 61
+41
+[11/Dec/2018 15:00:43] "GET /admin/jsi18n/ HTTP/1.1" 200 3189

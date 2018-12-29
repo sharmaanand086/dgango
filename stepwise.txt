@@ -1,0 +1,116 @@
+activate MydjangoEnv2
+1 django-admin startproject ProTwo
+2 cd ProTwo
+3 python manage.py startapp appTwo
+4 settings.py
+5 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
+
+6 INSTALLED_APPS = [
+'appTwo'
+]
+7 TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [TEMPLATE_DIR,],
+8 create folders =templates->appTwo->index.html,users.html
+9 models.py
+from django.db import models
+
+# Create your models here.
+class User(models.Model):
+    first_name = models.CharField(max_length=128)
+    last_name = models.CharField(max_length=128)
+    email = models.EmailField(max_length=264,unique=True)
+
+10 user.py
+from appTwo.models import User
+# Create your views here.
+
+def index(request):
+    return render(request,'appTwo/index.html')
+def users(request):
+    user_list=User.objects.order_by('first_name')
+    user_dict = {'users':user_list}
+    return render(request,'appTwo/users.html',context=user_dict)
+
+11create file: appTwo->urls.py
+from django.conf.urls import url
+from appTwo import views
+
+urlpatterns = [
+url(r'^$',views.users,name='users')
+]
+
+12 in project ->urls.py
+from django.conf.urls import url,include
+from django.contrib import admin
+from appTwo import views
+
+urlpatterns = [
+    url(r'^$', views.index,name='index'),
+    url(r'^admin/', admin.site.urls),
+    url(r'^users/',include('appTwo.urls')),
+]
+
+13 check for migrate
+python manage.py migrate
+
+14. python manage.py makemigrations appTwo
+
+15.one more time python manage.py migrate
+
+16. create admin
+from django.contrib import admin
+from appTwo.models import User
+# Register your models here.
+admin.site.register(User)
+
+17.python manage.py runserver to check admin then create super users
+
+18.create index file and the super users
+
+19.python manage.py createsuperuser
+username:
+email:
+pass:c
+cpass:
+super users uccessfully created
+
+20 python manage.py migrate
+no migration for good working
+
+21
+python manage.py runserver
+
+22 login
+
+23 create users save
+
+24 create file in main folder  ProTwo->populate_user.py
+25 . write code for populate fromdatabase
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE",'ProTwo.settings')
+
+import django
+django.setup()
+
+from appTwo.models import User
+from faker import Faker
+
+fakegen = Faker()
+def populate(N=5):
+    for entry in range(N):
+        fake_name=fakegen.name().split()
+        fake_first_name = fake_name[0]
+        fake_last_name = fake_name[1]
+        fake_email = fakegen.email()
+
+        #new entry
+        user = User.objects.get_or_create(first_name=fake_first_name,
+        last_name=fake_last_name,
+        email=fake_email)[0]
+if __name__ ==  '__main__':
+    print("populating database")
+    populate(20)
+    print("complete.")
+26 write code to user.html to see users
