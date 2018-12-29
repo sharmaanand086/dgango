@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>django image</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}" />
+  </head>
+  <body>
+    <h1>this is the picture</h1>
+    <img src="{% static "images/wallpapers.jpg"%}" alt="did't show">
+    {{insert_me}}
+  </body>
+</html>

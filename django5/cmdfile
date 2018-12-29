@@ -1,0 +1,299 @@
+it__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\apps
+\registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\apps
+\config.py", line 199, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\importlib\__init__.py", l
+ine 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 985, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 968, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 957, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 697, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Admin\django5\learning_users\basic_app\models.py", line 6, in <
+module>
+    class UserProfileInfo(models.Model):
+  File "C:\Users\Admin\django5\learning_users\basic_app\models.py", line 8, in U
+serProfileInfo
+    user = models.OnToOneField(User)
+AttributeError: module 'django.db.models' has no attribute 'OnToOneField'
+
+(MydjangoEnv2) C:\Users\Admin\django5\learning_users>python manage.py makemigrat
+ions basic_app
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\core
+\management\__init__.py", line 367, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\core
+\management\__init__.py", line 341, in execute
+    django.setup()
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\__in
+it__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\apps
+\registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\apps
+\config.py", line 199, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\importlib\__init__.py", l
+ine 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 985, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 968, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 957, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 697, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "C:\Users\Admin\django5\learning_users\basic_app\models.py", line 6, in <
+module>
+    class UserProfileInfo(models.Model):
+  File "C:\Users\Admin\django5\learning_users\basic_app\models.py", line 8, in U
+serProfileInfo
+    user = models.OnToOneField(User)
+AttributeError: module 'django.db.models' has no attribute 'OnToOneField'
+
+(MydjangoEnv2) C:\Users\Admin\django5\learning_users>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won
+'t be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage
+.py migrate' to apply them.
+
+(MydjangoEnv2) C:\Users\Admin\django5\learning_users>python manage.py makemigrat
+ions basic_app
+Migrations for 'basic_app':
+  basic_app\migrations\0001_initial.py:
+    - Create model UserProfileInfo
+
+(MydjangoEnv2) C:\Users\Admin\django5\learning_users>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, basic_app, contenttypes, sessions
+Running migrations:
+  Applying basic_app.0001_initial... OK
+
+(MydjangoEnv2) C:\Users\Admin\django5\learning_users>python manage.py makemigrat
+ions basic_app
+No changes detected in app 'basic_app'
+
+(MydjangoEnv2) C:\Users\Admin\django5\learning_users>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 13, 2018 - 14:18:17
+Django version 1.10.5, using settings 'learning_users.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[13/Dec/2018 14:18:21] "GET / HTTP/1.1" 200 735
+[13/Dec/2018 14:18:28] "GET /basic_app/register/ HTTP/1.1" 200 1752
+Internal Server Error: /basic_app/register/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\util
+s\module_loading.py", line 23, in import_string
+    return getattr(module, class_name)
+AttributeError: module 'django.contrib.auth.hashers' has no attribute 'Argon2Pas
+swordHaser'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\core
+\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\core
+\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\core
+\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Admin\django5\learning_users\basic_app\views.py", line 17, in r
+egister
+    user.set_password(user.password)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\cont
+rib\auth\base_user.py", line 105, in set_password
+    self.password = make_password(raw_password)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\cont
+rib\auth\hashers.py", line 79, in make_password
+    hasher = get_hasher(hasher)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\cont
+rib\auth\hashers.py", line 124, in get_hasher
+    return get_hashers()[0]
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\cont
+rib\auth\hashers.py", line 91, in get_hashers
+    hasher_cls = import_string(hasher_path)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\util
+s\module_loading.py", line 27, in import_string
+    six.reraise(ImportError, ImportError(msg), sys.exc_info()[2])
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\util
+s\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\util
+s\module_loading.py", line 23, in import_string
+    return getattr(module, class_name)
+ImportError: Module "django.contrib.auth.hashers" does not define a "Argon2Passw
+ordHaser" attribute/class
+[13/Dec/2018 14:19:53] "POST /basic_app/register/ HTTP/1.1" 500 102844
+[13/Dec/2018 14:20:39] "GET / HTTP/1.1" 200 735
+[13/Dec/2018 14:20:41] "GET /admin/ HTTP/1.1" 302 0
+[13/Dec/2018 14:20:41] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1657
+[13/Dec/2018 14:20:44] "GET /basic_app/register/ HTTP/1.1" 200 1752
+[13/Dec/2018 14:20:45] "GET / HTTP/1.1" 200 735
+[13/Dec/2018 14:20:46] "GET /basic_app/register/ HTTP/1.1" 200 1752
+Internal Server Error: /basic_app/register/
+Traceback (most recent call last):
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\util
+s\module_loading.py", line 23, in import_string
+    return getattr(module, class_name)
+AttributeError: module 'django.contrib.auth.hashers' has no attribute 'Argon2Pas
+swordHaser'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\core
+\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\core
+\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\core
+\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Admin\django5\learning_users\basic_app\views.py", line 17, in r
+egister
+    user.set_password(user.password)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\cont
+rib\auth\base_user.py", line 105, in set_password
+    self.password = make_password(raw_password)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\cont
+rib\auth\hashers.py", line 79, in make_password
+    hasher = get_hasher(hasher)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\cont
+rib\auth\hashers.py", line 124, in get_hasher
+    return get_hashers()[0]
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\cont
+rib\auth\hashers.py", line 91, in get_hashers
+    hasher_cls = import_string(hasher_path)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\util
+s\module_loading.py", line 27, in import_string
+    six.reraise(ImportError, ImportError(msg), sys.exc_info()[2])
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\util
+s\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Admin\Anaconda3\envs\MydjangoEnv2\lib\site-packages\django\util
+s\module_loading.py", line 23, in import_string
+    return getattr(module, class_name)
+ImportError: Module "django.contrib.auth.hashers" does not define a "Argon2Passw
+ordHaser" attribute/class
+[13/Dec/2018 14:21:26] "POST /basic_app/register/ HTTP/1.1" 500 102875
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 13, 2018 - 14:23:57
+Django version 1.10.5, using settings 'learning_users.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+<ul class="errorlist"><li>username<ul class="errorlist"><li>A user with that use
+rname already exists.</li></ul></li></ul>
+[13/Dec/2018 14:24:03] "POST /basic_app/register/ HTTP/1.1" 200 1908
+<ul class="errorlist"><li>username<ul class="errorlist"><li>A user with that use
+rname already exists.</li></ul></li></ul>
+[13/Dec/2018 14:24:12] "POST /basic_app/register/ HTTP/1.1" 200 1908
+[13/Dec/2018 14:24:27] "POST /basic_app/register/ HTTP/1.1" 200 747
+
+(MydjangoEnv2) C:\Users\Admin\django5\learning_users>python manage.py createsupe
+ruser
+Username (leave blank to use 'admin'): anup2
+Email address: anup2@gmail.com
+Password:
+Password (again):
+This password is too short. It must contain at least 9 characters.
+Password:
+Password (again):
+Superuser created successfully.
+
+(MydjangoEnv2) C:\Users\Admin\django5\learning_users>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 13, 2018 - 14:26:53
+Django version 1.10.5, using settings 'learning_users.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[13/Dec/2018 14:26:56] "GET /admin/ HTTP/1.1" 302 0
+[13/Dec/2018 14:26:56] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1657
+[13/Dec/2018 14:27:04] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[13/Dec/2018 14:27:04] "GET /admin/ HTTP/1.1" 200 3493
+[13/Dec/2018 14:27:06] "GET /admin/auth/user/ HTTP/1.1" 200 7665
+[13/Dec/2018 14:27:06] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:27:06] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[13/Dec/2018 14:27:10] "GET /admin/auth/user/1/change/ HTTP/1.1" 200 13511
+[13/Dec/2018 14:27:10] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:27:10] "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200
+ 655
+[13/Dec/2018 14:27:10] "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+
+[13/Dec/2018 14:27:10] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[13/Dec/2018 14:27:10] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 10
+86
+[13/Dec/2018 14:27:10] "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3
+291
+[13/Dec/2018 14:27:18] "GET /admin/auth/user/ HTTP/1.1" 200 7665
+[13/Dec/2018 14:27:18] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:27:49] "GET /admin/ HTTP/1.1" 200 3493
+[13/Dec/2018 14:27:50] "GET /admin/basic_app/userprofileinfo/ HTTP/1.1" 200 4301
+
+[13/Dec/2018 14:27:51] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:27:52] "GET /admin/basic_app/userprofileinfo/1/change/ HTTP/1.1"
+ 200 6047
+[13/Dec/2018 14:27:52] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:28:21] "POST /admin/basic_app/userprofileinfo/1/change/ HTTP/1.1
+" 302 0
+[13/Dec/2018 14:28:21] "GET /admin/basic_app/userprofileinfo/ HTTP/1.1" 200 4508
+
+[13/Dec/2018 14:28:21] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:28:26] "GET /admin/basic_app/userprofileinfo/1/change/ HTTP/1.1"
+ 200 6370
+[13/Dec/2018 14:28:26] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:28:31] "GET /admin/basic_app/userprofileinfo/1/history/ HTTP/1.1
+" 200 2131
+[13/Dec/2018 14:28:34] "GET /admin/basic_app/userprofileinfo/ HTTP/1.1" 200 4301
+
+[13/Dec/2018 14:28:34] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:28:37] "GET /admin/basic_app/ HTTP/1.1" 200 2294
+[13/Dec/2018 14:28:45] "GET /admin/ HTTP/1.1" 200 3839
+[13/Dec/2018 14:28:49] "GET /admin/auth/group/ HTTP/1.1" 200 3383
+[13/Dec/2018 14:28:49] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:28:52] "GET /admin/auth/ HTTP/1.1" 200 2709
+[13/Dec/2018 14:28:54] "GET /admin/ HTTP/1.1" 200 3839
+[13/Dec/2018 14:29:23] "GET /admin/auth/user/ HTTP/1.1" 200 7665
+[13/Dec/2018 14:29:23] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:29:27] "GET /admin/auth/user/2/change/ HTTP/1.1" 200 13518
+[13/Dec/2018 14:29:27] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:29:40] "GET /admin/auth/ HTTP/1.1" 200 2709
+[13/Dec/2018 14:29:41] "GET /admin/auth/user/ HTTP/1.1" 200 7665
+[13/Dec/2018 14:29:41] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:29:43] "GET /admin/auth/user/1/change/ HTTP/1.1" 200 13511
+[13/Dec/2018 14:29:43] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:29:47] "GET /admin/auth/ HTTP/1.1" 200 2709
+[13/Dec/2018 14:29:48] "GET /admin/auth/user/ HTTP/1.1" 200 7665
+[13/Dec/2018 14:29:48] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:29:50] "GET /admin/auth/user/4/change/ HTTP/1.1" 200 13690
+[13/Dec/2018 14:29:50] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:29:54] "GET /admin/auth/user/4/password/ HTTP/1.1" 200 2935
+[13/Dec/2018 14:29:54] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:30:00] "GET /admin/auth/user/4/change/ HTTP/1.1" 200 13690
+[13/Dec/2018 14:30:00] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:30:08] "GET /admin/auth/user/4/password/ HTTP/1.1" 200 2935
+[13/Dec/2018 14:30:08] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[13/Dec/2018 14:30:25] "GET /admin/ HTTP/1.1" 200 3839

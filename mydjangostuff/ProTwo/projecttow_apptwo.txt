@@ -1,0 +1,28 @@
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project>cd ..
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff>django-admin startproject ProTwo
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff>cd ProTow
+The system cannot find the path specified.
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff>cd ProTwo
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\ProTwo>python manage.py startapp App
+Two
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\ProTwo>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you
+ apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+December 10, 2018 - 14:53:17
+Django version 1.10.5, using settings 'ProTwo.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[10/Dec/2018 14:53:19] "GET /index/ HTTP/1.1" 200 22
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\ProTwo>
