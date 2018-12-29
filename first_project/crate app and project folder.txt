@@ -1,0 +1,93 @@
+creatind project as well as app
+_______________________________
+
+(base) C:\Users\Admin>activate MydjangoEnv2
+
+(MydjangoEnv2) C:\Users\Admin>mkdir mydjangostuff
+
+(MydjangoEnv2) C:\Users\Admin>cd mydjangostuff
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff>django-admin startproject first_proj
+ect
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff>
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff>cd first_project
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project>python manage.py runse
+rver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you
+ apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+December 10, 2018 - 14:33:08
+Django version 1.10.5, using settings 'first_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[10/Dec/2018 14:33:12] "GET / HTTP/1.1" 200 1767
+Not Found: /favicon.ico
+[10/Dec/2018 14:33:14] "GET /favicon.ico HTTP/1.1" 404 1943
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project>python manage.py start
+app first_app
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project>
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project>step:1 setting.py in f
+irst_project and writr the name of you app to installed_apps array
+The filename, directory name, or volume label syntax is incorrect.
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project>step 2: write code
+'step' is not recognized as an internal or external command,
+operable program or batch file.
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project>from django.http impor
+t HttpResponse
+'from' is not recognized as an internal or external command,
+operable program or batch file.
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project>
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project>def index(request):ret
+urn HttpResponse("hello wolrd")
+'def' is not recognized as an internal or external command,
+operable program or batch file.
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project> 
+from first_app import views
+ urlpatterns = [
+    url(r'index/', views.index,name='index'),
+    url(r'^admin/', admin.site.urls),
+]
+'from' is not recognized as an internal or external command,
+operable program or batch file.
+
+(MydjangoEnv2) C:\Users\Admin\mydjangostuff\first_project>python manage.py runse
+rver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you
+ apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+December 10, 2018 - 14:43:42
+Django version 1.10.5, using settings 'first_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Not Found: /
+[10/Dec/2018 14:43:44] "GET / HTTP/1.1" 404 2027
+Not Found: /index/
+[10/Dec/2018 14:43:48] "GET /index/ HTTP/1.1" 404 2045
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you
+ apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+December 10, 2018 - 14:44:10
+Django version 1.10.5, using settings 'first_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[10/Dec/2018 14:44:14] "GET /index/ HTTP/1.1" 200 11
