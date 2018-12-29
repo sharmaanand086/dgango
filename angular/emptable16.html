@@ -1,0 +1,23 @@
+<table>
+			<thead>
+			<tr>
+				<th >name </th>
+				<th >DOB </th>
+				<th> Gender</th>
+				<th>Salary (number)</th>
+				<th>city </th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<!-- orderBy:'name':true for decending order -->
+			<tr ng-repeat="employee in employees ">
+				<td>{{employee.firstname }}</td>
+				<td>{{employee.dob  }}</td>
+				<td>{{employee.gender  }}</td>
+				<td>{{employee.salary  }}</td>
+				<td>{{employee.city  }}</td>
+				 
+			</tr>
+		</tbody>
+		</table>

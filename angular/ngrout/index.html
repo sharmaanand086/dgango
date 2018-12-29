@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="angular_app">
+<head>
+	<title></title>
+	<!-- <script src="angular-rout.min.js"></script> -->
+	<script src="https://code.angularjs.org/1.7.5/angular-route.min.js"></script>
+	<script src="https://code.angularjs.org/1.7.5/angular.min.js"></script>
+	<script src="app.js"></script>
+    <script src="config.js"></script>
+	 
+	 <style type="text/css">
+      .logout{
+       float: right;
+    font-size: 30px;
+    font-style: normal;
+    position: relative;
+    margin-top: -72px;
+      }   
+      .navigation{
+        font-size: 26px;
+    padding: 28px;
+
+      }
+     </style>
+</head>
+<body ng-controller="angular_controller">
+    <div>
+        <div class="navigation">
+            <a href="#/dashboard">Home</a>
+            <a href="#/report">Reports</a>
+        </div>
+        <div class="logout">
+            <a href="" ng-click="logout()">Logout</a>            
+        </div>
+    </div>
+    <div ng-view>
+        
+    </div>
+ </body>
+</html>

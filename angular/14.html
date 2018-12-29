@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ng hide and ng show data</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="14.js"></script>
+	 
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		 
+	 <input type="checkbox" ng-model="hideSalary"> hide salary
+		<table>
+			<thead>
+			<tr>
+				<th >name </th>				 
+				<th> Gender</th>
+				<th>city</th>
+				<th ng-hide="hideSalary">Salary (number)</th>
+			 <th ng-show="hideSalary">Salary (number)</th>
+			</tr>
+		</thead>
+		<tbody>
+		 
+			<tr ng-repeat="employee in employees ">
+				<td>{{employee.name }}</td>			 
+				<td>{{employee.gender  }}</td>
+				<td>{{employee.city  }}</td>
+				<td ng-hide="hideSalary">{{employee.salary  }}</td>
+				<td ng-show="hideSalary">###</td> 
+	 		 
+				 
+			</tr>
+		</tbody>
+		</table>
+		
+	</div>
+	
+</body>
+ </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="script.js"></script>
+</head>
+<body ng-app="myModule">
+	<!-- <div  >10+20 ={{10+20}}</div>
+	<div>10+20 ={{10+20}}</div> -->
+	<!--part 2 -->
+   <!--  <div > {{ {name:'anand',age:'24'}.name}}</div>
+     <div ng-controller="myController"> {{ message}}</div>
+     <div  ng-controller="myController"> {{ message}}</div>
+     <div> {{ message}}</div> -->
+
+     <!--part 3 --> 
+    <!--  <div  ng-controller="myController" >
+     	<div>first name:{{ employee.name}}</div>
+       <div>last name:{{ employee.lastname}}</div>
+       <div>age: {{ employee.age}}</div>
+        
+   </div> -->
+ <!--part 4 --> 
+   <!-- <div ng-controller="myController">
+   	<div> Name:{{country.name}}</div>
+   	<div> Name:{{country.capital}}</div>
+   	 
+   	<div>
+   		<img ng-src="{{country.flag}}" alt="{{country.name+'flag'}}" height="300px" width="300px">
+   	</div>
+   	</div> -->
+
+      <!--part 5 --> 
+   <!-- 	<div ng-controller="myController">
+   	  <input type="text" ng-model="message"/> 
+   {{ message}} 
+   </div> -->
+
+    <!--part 6 --> 
+	<!-- <div ng-controller="myController">
+   	 <table>
+   	 	<tr>
+   	 		<td>First name:</td>
+   	 		<td><input type="text" ng-model="employee.firstname"></td>
+   	 		 
+   	 	</tr>
+   	 	<tr>
+   	 		<td>last name:</td>
+   	 		<td><input type="text" ng-model="employee.lastname"></td>
+   	 		 
+   	 	</tr>
+   	 	<tr>
+   	 		<td>gender</td>
+   	 		<td><input type="text" ng-model="employee.gender"></td>
+   	 		 
+   	 	</tr>
+   	 </table>
+   	 <br> <br>
+
+   	 <table>
+   	 	<tr>
+   	 		<td>First name:</td>
+   	 		<td>{{employee.firstname}}</td>
+   	 		 
+   	 	</tr>
+   	 	<tr>
+   	 		<td>last name:</td>
+   	 		<td>{{employee.lastname}}</td>
+   	 		 
+   	 	</tr>
+   	 	<tr>
+   	 		<td>gender</td>
+   	 		<td>{{employee.gender}}</td>
+   	 		 
+   	 	</tr>
+   	 </table>
+   </div> -->
+  <!--part 6 --> 
+ <!--  <div ng-controller="myController">
+  	<table>
+  		<thead>
+  			<tr>
+  				<th>first name</th>
+  				<th>last name</th>
+  				<th>gender </th>
+  				<th>salary</th>
+  			</tr>
+  		</thead> 
+  		<tbody>
+  			<tr ng-repeat="employee in employees">
+  				<th>{{employee.firstname}}</th>
+  				<th>{{employee.lastname}}</th>
+  				<th>{{employee.gender}}</th>
+  				<th>{{employee.salary}}</th>
+  			</tr>
+  		</tbody>
+  	</table>
+  	 
+  </div> -->
+<!--part 6-2 --> 
+  <div ng-controller="myController">
+  <ul>
+  	<li ng-repeat="country in countries" ng-init="parentIndex=$index">
+  		{{country.name}} - index:{{$index}}
+
+  		 <ul>
+		  	<li ng-repeat="city in country.cities">
+		  		 {{city.name}}- parent index : {{parentIndex}} -index :{{$index}}
+		  	</li>
+		  
+		  </ul>
+  	</li>
+  	 
+  </ul>
+  	 
+  </div>
+</body>
+</html>

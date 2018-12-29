@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> filter searching data by exact match  </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="12.js"></script>
+	 
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		<h4>Search :
+			<input type="text " name="search" placeholder="search city and name" ng-model="searchText">
+			 
+		</h4> 
+		<!--ng-model="searchText.city" -->
+		<table>
+			<thead>
+			<tr>
+				<th >name </th>
+				<th >DOB </th>
+				<th> Gender</th>
+				<th>Salary (number)</th>
+				<th>city </th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<!-- orderBy:'name':true for decending order -->
+			<tr ng-repeat="employee in employees |filter:search">
+				<td>{{employee.firstname }}</td>
+				<td>{{employee.dob  }}</td>
+				<td>{{employee.gender  }}</td>
+				<td>{{employee.salary  }}</td>
+				<td>{{employee.city  }}</td>
+				 
+			</tr>
+		</tbody>
+		</table>
+		
+	</div>
+	
+</body>
+ </html>

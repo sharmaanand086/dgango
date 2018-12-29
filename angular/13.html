@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create a custom filter in AngularJS 1,2,3 and male ,female,not disclose</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="13.js"></script>
+	 
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		 
+		<!--ng-model="searchText.city" -->
+		<table>
+			<thead>
+			<tr>
+				<th >name </th>				 
+				<th> Gender</th>
+				<th>Salary (number)</th>
+			 
+			</tr>
+		</thead>
+		<tbody>
+			<!-- orderBy:'name':true for decending order -->
+			<tr ng-repeat="employee in employees |filter:search">
+				<td>{{employee.name }}</td>
+			 <!-- using custom filter in gender -->
+				<td>{{employee.gender |gender }}</td>
+				<td>{{employee.salary  }}</td>
+				 
+				 
+			</tr>
+		</tbody>
+		</table>
+		
+	</div>
+	
+</body>
+ </html>

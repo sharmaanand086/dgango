@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>init directive</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="15.js"></script>
+	 
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController"  >
+		 <ul>
+		 	<li ng-repeat="country in countries" ng-init="parentIndex=$index">
+		 		{{country.name}} - index ={{$index}} 
+		 		<ul>
+		 			<li ng-repeat="city in country.cities">
+		 				{{city.name}} -parent = {{parentIndex}}, index ={{$index}} 
+		 			</li>
+		 		</ul>
+		 	</li>
+		 </ul>
+	  
+		 
+		
+	</div>
+	
+</body>
+ </html>

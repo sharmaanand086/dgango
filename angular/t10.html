@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sort row by table header clik only</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="t10.js"></script>
+	<style type="text/css">
+		.arrow-up{
+			width: 0;
+			height: 0;
+			border-right: 5px solid transparent;
+			border-left: 5px solid transparent;
+			border-bottom: 10px solid black;
+			display: inline-block;
+		}
+		.arrow-down{
+			width: 0;
+			height: 0;
+			border-right: 5px solid transparent;
+			border-left: 5px solid transparent;
+			border-bottom: 10px solid black;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		 
+		<table>
+			<thead>
+			<tr>
+				<th ng-click="sortData(firstname)" >
+					name  <div ng-class="getSortClass('firstname')"></div>
+				</th>
+				<th ng-click="sortData('dob')">
+					DOB <div ng-class="getSortClass('dob')"></div>
+				</th>
+				<th> Gender</th>
+				<th>Salary (number)</th>
+				<th>Salary (currency) </th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<!-- orderBy:'name':true for decending order -->
+			<tr ng-repeat="employee in employees |orderBy:sortColumn:reverseSort">
+				<td>{{employee.firstname | uppercase}}</td>
+				<td>{{employee.dob | date:"dd/MM/yyyy"}}</td>
+				<td>{{employee.gender | lowercase}}</td>
+				<td>{{employee.salary | number:"2"}}</td>
+				<td>{{employee.salary |currency:"$":1}}</td>
+				 
+			</tr>
+		</tbody>
+		</table>
+		
+	</div>
+	
+</body>
+ </html>

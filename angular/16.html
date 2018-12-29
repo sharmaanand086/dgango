@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ng include directive in AngularJS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="16.js"></script>
+	 
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController"  >
+		select to view:  
+		<select ng-model="employeview"> 
+			<option value="emptable16.html">table</option>
+			<option value="emplist16.html">list</option>
+		</select>
+		<br><br>
+		  <div ng-include="employeview"></div>
+		
+	</div>
+	
+</body>
+ </html>

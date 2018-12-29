@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>handiling event in angular js like and dislike</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="t7.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		<table>
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Likes</th>
+				<th>dislikes</th>
+				<th>Likes/Dislikes</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="technology in technologies">
+				<td>{{technology.name}}</td>
+				<td>{{technology.likes}}</td>
+				<td>{{technology.dislikes}}</td>
+				<td>
+				<input type="button"  value="like" ng-click="incrementLikes(technology)"></td>
+				<td>
+					<input type="button"  value="dislike" ng-click="incrementDislikes(technology)">
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		
+	</div>
+	
+</body>
+ </html>
